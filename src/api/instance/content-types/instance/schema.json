@@ -35,6 +35,14 @@
       "relation": "oneToMany",
       "target": "api::job.job",
       "mappedBy": "instance"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "pendiente",
+        "activa",
+        "error"
+      ]
     }
   }
 }
