@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instances",
+  "info": {
+    "singularName": "instance",
+    "pluralName": "instances",
+    "displayName": "Instance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "subdomain": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "config": {
+      "type": "json",
+      "required": true
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company",
+      "inversedBy": "instances"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "instance"
+    }
+  }
+}
